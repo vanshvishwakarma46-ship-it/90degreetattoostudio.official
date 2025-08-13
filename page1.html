@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - 90° Tattoo Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 id="thankTitle">🎉 Thank You!</h1>
+<p id="thankMessage">We have received your booking details. Our artist <strong>Sandy Sharma</strong> will contact you soon.</p>
+
+<div class="offer">
+    <h2>💥 Special Offer Just for You!</h2>
+    <p>Show this page during your visit and get <strong>10% OFF</strong> on your first tattoo.</p>
+</div>
+
+<p>See more designs on our Instagram:</p>
+<p><a href="https://instagram.com/90degree_tattoo_studio" target="_blank">📷 Visit Instagram</a></p>
+
+<a href="index.html">⬅ Back to Home</a>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const userName = params.get("user") || "";
+    const service = params.get("service") || "";
+
+    if (userName && service) {
+        document.getElementById("thankTitle").textContent = `🎉 Thank You, ${userName}!`;
+        document.getElementById("thankMessage").textContent = `We have received your booking for a "${service}" at 90° Tattoo Studio. We will contact you soon with details.`;
+    } else if (userName) {
+        document.getElementById("thankTitle").textContent = `🎉 Thank You, ${userName}!`;
+    }
+</script>
+
+</body>
+</html>

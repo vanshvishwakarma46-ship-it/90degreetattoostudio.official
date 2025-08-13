@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90 Degree Tattoo Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>90° Tattoo Studio</h1>
+    <p>by Sandy Sharma</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact & Booking</a>
+</nav>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        Welcome to <strong>90 Degree Tattoo Studio</strong> - where art meets passion.
+        Founded by <b>Sandy Sharma</b>, our mission is to give you tattoos that last a lifetime,
+        with precision, creativity, and hygiene as our top priorities.
+    </p>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <ul>
+        <li>✅ Cover-up Tattoos</li>
+        <li>✅ Permanent Tattoos</li>
+        <li>✅ Laser Tattoo Removal</li>
+        <li>✅ For anything else, please contact us</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact & Booking</h2>
+
+    <div class="contact-info">
+        <p>📧 Email: <a href="mailto:90degree_tattoo_studio@gmail.com">90degree_tattoo_studio@gmail.com</a></p>
+        <p>📞 Phone: <a href="tel:+918872070404">+91 88720 70404</a></p>
+        <p>📍 Location: <a href="https://maps.google.com/?q=33 Feet Road, Giyaspura, Ludhiana" target="_blank">33 Feet Road, Giyaspura, Ludhiana</a></p>
+        <p>📷 Instagram: <a href="https://instagram.com/90degree_tattoo_studio" target="_blank">@90degree_tattoo_studio</a></p>
+    </div>
+
+    <hr>
+
+    <!-- Contact Form -->
+    <form id="contactForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="service">Service Required:</label>
+        <select id="service" name="service" required>
+            <option value="">-- Select a service --</option>
+            <option value="Cover-up Tattoo">Cover-up Tattoo</option>
+            <option value="Permanent Tattoo">Permanent Tattoo</option>
+            <option value="Laser Removal">Laser Removal</option>
+        </select>
+
+        <label for="message">Message / Design Details:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Send Booking Request</button>
+    </form>
+
+    <!-- Confirmation Message -->
+    <div id="formMessage" style="display:none; color:green; margin-top:10px;">
+        ✅ Your booking request has been sent!
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 90° Tattoo Studio | All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
