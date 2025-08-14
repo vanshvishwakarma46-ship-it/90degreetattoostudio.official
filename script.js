@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (form) {
         form.addEventListener("submit", function (event) {
-            event.preventDefault(); // Stop default submit
+            event.preventDefault();
 
             const name = document.getElementById("name").value.trim();
             const email = document.getElementById("email").value.trim();
@@ -15,31 +15,34 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("⚠ Please fill all required fields.");
                 return;
             }
+
             if (!emailPattern.test(email)) {
                 alert("⚠ Please enter a valid email address.");
                 return;
             }
 
+            // Hide the form
+            form.style.display = "none";
+
+            // Personalised thank‑you message in the same page
+            msg.innerHTML = `🎉 Thank you <strong>${name}</strong>, your booking for <strong>${service}</strong> has been received!`;
             msg.style.display = "block";
 
-            const url = new URL("page1.html", window.location.origin);
-            url.searchParams.append("user", name);
-            url.searchParams.append("service", service);
+            // Change meta description dynamically
+document.querySelector("meta[name='description']").setAttribute(
+    "content",
+    "90° Tattoo Studio | Ludhiana's Best Tattoos, Cover-up, and Laser Removal by Sandy Sharma."
+);
 
-            // Safety check if page1.html exists
-            fetch(url.pathname, { method: 'HEAD' })
-                .then(response => {
-                    if (response.ok) {
-                        setTimeout(() => {
-                            window.location.href = url.toString();
-                        }, 1000);
-                    } else {
-                        alert("❌ page1.html file not found on the server.");
-                    }
-                })
-                .catch(() => {
-                    alert("⚠ Unable to connect to the server to load page1.html.");
-                });
+// Change page title
+document.title = "90° Tattoo Studio | Best Tattoos in Ludhiana";
+
+// Example: Change Open Graph image
+document.querySelector("meta[property='og:image']").setAttribute(
+    "content",
+    "https://example.com/path-to-your-tattoo-studio-photo.jpg"
+);
+
         });
     }
 });
